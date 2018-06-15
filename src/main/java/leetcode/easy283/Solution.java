@@ -1,4 +1,4 @@
-package leetcode.easy238;
+package leetcode.easy283;
 
 /**
  * 283. Move Zeroes

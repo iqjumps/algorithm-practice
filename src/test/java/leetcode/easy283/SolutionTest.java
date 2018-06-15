@@ -1,8 +1,6 @@
-package leetcode.easy238;
+package leetcode.easy283;
 
 import org.junit.Test;
-
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
