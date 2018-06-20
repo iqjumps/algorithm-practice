@@ -8,32 +8,34 @@ import java.util.PriorityQueue;
  */
 class Solution {
 
+    PriorityQueue<Integer> q = new PriorityQueue<>();
+
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
         }
-        PriorityQueue<Integer> q = new PriorityQueue<>();
         for (ListNode node : lists) {
-            if (node == null) {
-                continue;
-            }
-            q.add(node.val);
-            while ((node = node.next) != null) {
-                q.add(node.val);
-            }
+            traverse(node);
         }
-        if (q.isEmpty()) {
+        int size = q.size();
+        if (size == 0) {
             return null;
         }
         ListNode node = new ListNode(q.poll());
         ListNode temp = node;
-        while (!q.isEmpty()) {
+        for (int i=1; i<size; i++) {
             temp.next = new ListNode(q.poll());
             temp = temp.next;
         }
         return node;
     }
-
+    public void traverse(ListNode node) {
+        if (node == null) {
+            return;
+        }
+        traverse(node.next);
+        q.add(node.val);
+    }
 
     public static class ListNode {
         int val;
