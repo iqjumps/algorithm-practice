@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by NAVER on 2018-05-30.
- */
 public class SolutionTest {
     @Test
     public void maxSubArray() throws Exception {
